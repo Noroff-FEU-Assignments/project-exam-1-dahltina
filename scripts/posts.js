@@ -1,16 +1,14 @@
 
 const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/";
 const imageUrl = url + "?_embed";
-// ?per_page=10
-
-const carouselContainer = document.querySelector(".carousel-container");
+const urlTenResults = imageUrl + "?per_page=10";
 
 async function getLatestPosts() {
 
     try {
         const response = await fetch(imageUrl);
         const results = await response.json();
-        createCarousel(results);
+        displayPosts(results);
     }
     catch (error) {
         console.log(error);
@@ -19,28 +17,41 @@ async function getLatestPosts() {
 
 getLatestPosts()
 
-function createCarousel(post) {
-    console.log(post);
-    post.forEach(function (post) {
+// display all posts blog page
+const blogContainer = document.querySelector(".blog-container");
 
-        carouselContainer.innerHTML += `<div class="carousel slides">
-                                            <img class="carousel-image" src="${post._embedded['wp:featuredmedia']['0'].source_url}">
-                                            <button class="previous"><img class="arrow-right" src="images/arrow-right.png" alt="next slide"></button>
-                                            <button class="next"><img class="arrow-left" src="images/arrow-left.png" alt="next slide"></button>
-                                            <div class="overlay">
-                                                <h3 class="carousel-text">${post.title.rendered}</h3>
-                                                <p>${post.excerpt.rendered}</p>
-                                            </div>
-                                        </div>
-                                    </div>`
-    })
+function displayPosts(post) {
+    console.log(post);
+    for (let i = 0; i < post.length; i++) {
+
+        blogContainer.innerHTML += `<div class="blog-page-box one">
+                                    <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
+                                    <div class="box-text box-text-one">
+                                        <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
+                                        <p class="date">${post[i].date} - Travel - USA</p>
+                                        <p class="excerpt">${post[i].excerpt.rendered}</p>
+                                    </div>
+                                </div>`
+    }
 }
 
-const nextBtn = document.querySelector(".arrow-right");
-const previousBtn = document.querySelector(".arrow-left");
-const slides = document.querySelector(".slides");
 
+// function displayPosts(post) {
+//     console.log(post);
+//     post.forEach(function (post) {
 
+//         carouselContainer.innerHTML += `<div class="carousel">
+//                                                 <section>
+//                                                     <img class="carousel-image" src="${post._embedded['wp:featuredmedia']['0'].source_url}">
+//                                                     <div class="overlay">
+//                                                         <h3 class="carousel-text">${post.title.rendered}</h3>
+//                                                         <p>${post.excerpt.rendered}</p>
+//                                                     </div>
+//                                                 </section>
+//                                         </div>
+//                                     </div>`
+//     })
+// }
 
 
 // const mediaUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/media?per_page=100";
