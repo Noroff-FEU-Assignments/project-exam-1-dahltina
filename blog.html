@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog about travel, lifestyle and nomadism"/>
+    <script src="https://kit.fontawesome.com/e8143a351d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dbs4ycu.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Blog | Nomadlife</title>
+</head>
+<body>
+    <header>
+        <img class="logo" alt="logo" src="images/logo.png">
+        <!------- navigation ------->
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label> 
+        <input type="checkbox" id="hamburger-menu"> 
+        <nav role="navigation" aria-label="main menu">
+        <ul class="navbar">
+            <li><a href="index.html">home</a></li>
+            <li><a href="blog.html" class="active">blog</li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div class="body">
+
+        <main>
+            <h1 class="centered">Blog</h1>
+            <h2 class="margin-h2 full-width latest-posts">Featured Post</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img class="carousel-image" src="images/test.jpg">
+                    <div class="overlay">
+                        <h3 class="carousel-text">Guide to Cartagena</h3>
+                        <p>Lorem Ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="thin line thin-line-one"></div>
+            <h2 class="margin-h2 full-width latest-posts-blog">Latest Posts</h2>
+
+            <div class="blog-container">
+                <div class="blog-page-box one">
+                    <img src="images/test.jpg"  class="box-image box-image-one">
+                    <div class="box-text box-text-one">
+                        <h3 class="carousel-text post-h3">How to climb Haiku Stairs, aka Stairway to Heaven </h3>
+                        <p class="date">April 21 - Travel - USA</p>
+                        <p class="excerpt">Lorem ipsum dolor sit amet, consetetur sadipscing 
+                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                            magna aliquyam erat, sed diam voluptua. At vero
+                        </p>
+                    </div>
+            </div>
+        </main>
+
+    </div>
+    <div class="line margin-bottom"></div>
+    <footer>
+        <img class="logo" src="images/logo.png">
+        <p>All rights reserved</p>
+        <img class="icon insta margin-y" src="images/icon-insta.svg">
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/posts.js"></script>
+</body>
+</html>

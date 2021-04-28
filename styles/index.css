@@ -1,0 +1,613 @@
+/* global styles including mobile */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Gastromond", "Montserrat";
+    src: url("https://use.typekit.net/dbs4ycu.css");
+    src: url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+}
+
+:root {
+    --background: #f8f6f0;
+    --cta: #ffb09d;
+    --coral: #fadac5;
+    --blue: #283879;
+    --lightblue: #c9cee3;
+    --white: #ffffff;
+    --gray: #707070;
+    --black: #000000;
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Montserrat";
+}
+
+.body {
+    margin: 10px;
+}
+
+/* padding and margin-classes */
+.margin-y {
+    margin: 40px 0px;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.padding-y {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* typography */
+
+h1,
+.carousel-text {
+    font-family: "Gastromond", serif;
+    text-transform: none;
+}
+
+.carousel-text {
+    font-size: 1.5rem;
+}
+
+.centered {
+    text-align: center;
+}
+
+.padding {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* images and buttons */
+
+img {
+    width: 100%;
+}
+
+.btn {
+    background-color: var(--cta);
+    color: var(--black);
+    font-family: "Gastromond";
+    padding: 10px 30px;
+    position: relative;
+    top: 30px;
+}
+
+.newsletter-btn {
+    border: none;
+    top: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.icon {
+    width: 30px;
+}
+
+/* lines and graphics */
+
+.line {
+    height: 3px;
+    background-color: var(--gray);
+}
+
+.thin {
+    height: 1px;
+}
+
+/* header */
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    height: 50px;
+    margin: 10px;
+}
+
+.logo {
+    width: 110px;
+}
+
+/* navigation */
+
+nav {
+    display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block;
+}
+
+ul {
+    z-index: 10;
+    position: absolute;
+    top: 50px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    list-style-type: none;
+    opacity: 98%;
+}
+
+li {
+    padding-top: 80px;
+}
+
+ul a {
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+.active {
+    color: var(--black);
+}
+
+/* main section index */
+
+.intro-container {
+    margin-top: 40px;
+}
+
+/* carousel index */
+
+.carousel-container {
+    margin-top: 50px;
+}
+
+.slides {
+    display: none;
+}
+
+.box-1,
+.carousel {
+    position: relative;
+}
+
+.margin-h2 {
+    margin: 20px 0px -20px 0px;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.overlay,
+.overlay-2 {
+    height: 120px;
+    background-color: var(--background);
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    z-index: 9;
+    width: 100%;
+}
+
+.overlay-2 {
+    height: 55px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-box-1 {
+    align-self: center;
+}
+
+.about-section,
+.box-1,
+.blog-post-box {
+    margin: 30px 0px;
+}
+
+/* about section index */
+
+.about-section {
+    background-color: var(--coral);
+    padding: 50px 50px 80px 50px;
+}
+
+/* popular posts index */
+
+.h2-popular-posts {
+    margin-bottom: 10px;
+}
+
+.date {
+    font-style: italic;
+    padding: 10px 0px;
+}
+
+/* signup newletter form */
+
+#newsletter {
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.input-container {
+    position: relative;
+    margin: 15px 0px;
+}
+
+.label {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid var(--gray);
+}
+
+.form-error {
+    display: none;
+}
+
+.sign-up-newsletter {
+    padding: 30px 10px 50px 10px;
+    background-color: var(--coral);
+}
+
+/* footer */
+footer {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.insta {
+    margin-top: 10px;
+}
+
+/* about-page */
+
+.about-text-about-page {
+    line-height: 30px;
+}
+
+.about-page {
+    margin: 0 auto;
+}
+
+.about-container {
+    margin: 10px;
+}
+
+/*////////// tablets //////////*/
+@media (min-width: 650px) and (max-width: 900px) {
+    /* navigation */
+    ul {
+        font-size: 1.2rem;
+    }
+
+    /* typography */
+    h1 {
+        font-size: 50px;
+    }
+
+    .about-section p {
+        line-height: 32px;
+    }
+
+    /* grid layout index */
+
+    .main {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        align-items: end;
+    }
+
+    .intro-container,
+    .carousel-container,
+    .line,
+    .sign-up-newsletter,
+    .blog-post-box,
+    .about-section {
+        grid-column: 1 / 3;
+    }
+
+    .carousel-container {
+        margin-top: 0px;
+    }
+
+    .margin-h2 {
+        margin-bottom: 1px;
+    }
+
+    .blog-post-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .box-1 {
+        margin: 0px;
+    }
+
+    .full-width {
+        grid-column: 1 / 3;
+    }
+
+    .one {
+        margin-top: 0px;
+    }
+
+    .sign-up-newsletter {
+        margin: 60px 0 0 0;
+    }
+}
+
+/*////////// laptops //////////*/
+@media (min-width: 901px) {
+    /* navigation */
+    ul {
+        font-size: 1.5rem;
+    }
+
+    /* typography */
+    h1 {
+        font-size: 60px;
+    }
+
+    .overlay {
+        height: 140px;
+    }
+
+    .carousel-text {
+        font-size: 30px;
+    }
+
+    .post-h3 {
+        font-size: 1.3rem;
+    }
+
+    /* buttons, images */
+    .btn {
+        padding: 10px;
+    }
+
+    /* grid layout index */
+
+    header {
+        margin: 20px 40px;
+    }
+
+    .intro-container {
+        max-width: 800px;
+    }
+
+    .body {
+        margin: 20px 10%;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(6, 14.6%);
+        grid-gap: 20px;
+        align-items: start;
+        margin-bottom: 100px;
+    }
+
+    .line {
+        grid-column: 1 / 7;
+    }
+    .intro-container {
+        grid-column: 1 / 7;
+    }
+    .latest-posts {
+        grid-area: 2 / 1 / 3 / 4;
+    }
+    .popular-categories {
+        grid-area: 2 / 5 / 3 / 7;
+    }
+    .carousel-container {
+        grid-area: 3 / 1 / 5 / 5;
+    }
+    .destinations {
+        grid-area: 3 / 5 / 4 / 7;
+    }
+    .dig-nomad {
+        grid-area: 4 / 5 / 5 / 7;
+    }
+    .line-one {
+        grid-area: 5 / 1 / 6 / 7;
+    }
+    .h2-popular-posts  {
+        grid-area: 6 / 3 / 7 / 7;
+    }
+    .about-section {
+        grid-area: 7 / 1 / 13 / 3;
+    }
+    .one {
+        grid-area: 7 / 3 / 8 / 7;
+    }
+    .thin-line-one {
+        grid-area: 8 / 3 / 9 / 7;
+    }
+    .two {
+        grid-area: 9 / 3 / 10 / 7;
+    }
+    .thin-line-two {
+        grid-area: 10 / 3 / 11 / 7;
+    }
+    .three {
+        grid-area: 11 / 3 / 12 / 7;
+    }
+    .thin-line-three {
+        display: none;
+    }
+    .line-two {
+        grid-area: 13 / 1 / 14 / 7;
+    }
+    .resources-h2 {
+        grid-area: 14 / 1 / 15 / 7;
+    }
+    .travel-tips {
+        grid-area: 15 / 1 / 16 / 3;
+    }
+    .earning-money {
+        grid-area: 15 / 3 / 16 / 5;
+    }
+    .retreats {
+        grid-area: 15 / 5 / 16 / 7;
+    }
+    .lifestyle {
+        grid-area: 16 / 1 / 17 / 3;
+    }
+    .budget-travel {
+        grid-area: 16 / 3 / 17 / 5;
+    }
+    .solo-female-travel {
+        grid-area: 16 / 5 / 17 / 7;
+    }
+    .sign-up-newsletter {
+        grid-area: 17 / 1 / 18 / 7;
+    }
+
+    .blog-post-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .blog-post-box.one {
+        grid-template-rows: 50px 1fr;
+    }
+    .box-image-one {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .box-text-one {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .box-1,
+    .blog-post-box,
+    .carousel-container {
+        margin: 0px;
+    }
+
+    .dig-nomad {
+        align-self: end;
+    }
+
+    .excerpt {
+        max-height: 40px;
+        overflow: hidden;
+    }
+
+    .about-section {
+        align-self: stretch;
+        margin: 0px;
+    }
+
+    .about-section h2 {
+        margin-bottom: 30px;
+    }
+
+    .about-text {
+        line-height: 32px;
+        max-height: 510px;
+        overflow: hidden;
+    }
+
+    .sign-up-newsletter {
+        padding: 80px 10px 100px 10px;
+    }
+
+    .sign-up-h3,
+    .sign-up-h4 {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/*////////// desktop //////////*/
+@media (min-width: 1400px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    .about-section {
+        margin-bottom: 29px;
+    }
+
+    .about-section p {
+        line-height: 32px;
+        margin-bottom: 40px;
+    }
+
+    .about-section h2 {
+        margin-bottom: 50px;
+    }
+
+    a.about-btn {
+        padding: 15px 40px;
+        margin-top: 100px;
+        font-size: 1.2rem;
+    }
+
+    .post-h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 30px;
+    }
+
+    .body {
+        margin: 20px 15%;
+    }
+
+    .main {
+        grid-gap: 30px;
+    }
+
+    .excerpt {
+        max-height: 250px;
+        overflow: hidden;
+    }
+}
