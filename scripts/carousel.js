@@ -1,14 +1,12 @@
 
-const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/";
-const imageUrl = url + "?_embed";
-const urlTenResults = imageUrl + "?per_page=10";
+const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/?_embed";
 
 const carouselContainer = document.querySelector(".carousel-container");
 
 async function getLatestPosts() {
 
     try {
-        const response = await fetch(imageUrl);
+        const response = await fetch(url);
         const results = await response.json();
         displayCarousel(results);
     }
@@ -27,15 +25,15 @@ function displayCarousel(post) {
             break;
         }
 
-        carouselContainer.innerHTML += `<div class="carousel">
-                                           <section>
-                                               <img class="carousel-image" src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}">
-                                               <div class="overlay">
-                                                   <h3 class="carousel-text">${post[i].title.rendered}</h3>
-                                                   <p>${post[i].excerpt.rendered}</p>
-                                               </div>
-                                           </section>
-                                       </div>
+        carouselContainer.innerHTML += `<a href="post.html?id=${post[i].id}" class="carousel">
+                                            <section>
+                                                <img class="carousel-image" src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}">
+                                                <div class="overlay">
+                                                    <h3 class="carousel-text">${post[i].title.rendered}</h3>
+                                                    <p class="carousel-text">${post[i].excerpt.rendered}</p>
+                                                </div>
+                                            </section>
+                                        </a>
                                     </div>`
     }
 }

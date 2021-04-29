@@ -1,12 +1,12 @@
 
-const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/";
-const imageUrl = url + "?_embed";
-const urlTenResults = imageUrl + "?per_page=10";
+const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/?_embed";
+const urlTenResults = url + "?per_page=12&offset=15";
+
 
 async function getLatestPosts() {
 
     try {
-        const response = await fetch(imageUrl);
+        const response = await fetch(url);
         const results = await response.json();
         displayPosts(results);
     }
@@ -17,23 +17,31 @@ async function getLatestPosts() {
 
 getLatestPosts()
 
+
 // display all posts blog page
 const blogContainer = document.querySelector(".blog-container");
 
 function displayPosts(post) {
     console.log(post);
+
+    // const date = new Intl.DateTimeFormat(post.date).format(post.date);
+
     for (let i = 0; i < post.length; i++) {
 
-        blogContainer.innerHTML += `<div class="blog-page-box">
-                                        <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
-                                        <div class="box-text box-text-one">
-                                            <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
-                                            <p class="date">${post[i].date} - Travel - USA</p>
-                                            <p class="excerpt">${post[i].excerpt.rendered}</p>
+        blogContainer.innerHTML += `<a href="post.html?id=${post[i].id}">
+                                        <div class="blog-page-box">
+                                            <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
+                                            <div class="box-text box-text-one">
+                                                <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
+                                                <p class="date">${post[i].date} - Travel - USA</p>
+                                                <p class="excerpt">${post[i].excerpt.rendered}</p>
+                                            </div>
                                         </div>
-                                    </div>`
+                                    </a>`
     }
 }
+
+
 
 
 // get featured post
