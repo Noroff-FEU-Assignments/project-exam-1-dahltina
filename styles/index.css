@@ -336,6 +336,32 @@ footer {
     margin: 10px;
 }
 
+/* blog page */
+.blog-page-box {
+    margin: 20px 0px;
+}
+
+.featured-post-container {
+    position: relative;
+}
+
+.categories-container {
+    background-color: var(--coral);
+    padding: 30px;
+}
+
+.categories-container a {
+    color: var(--blue);
+    line-height: 25px;
+}
+
+.categories-container h3,
+.categories-container,
+.featured-post-container,
+.blog-page-h2 {
+    margin-bottom: 20px;
+}
+
 /*////////// tablets //////////*/
 @media (min-width: 650px) and (max-width: 900px) {
     /* navigation */
@@ -591,6 +617,43 @@ footer {
         max-width: 600px;
         margin: 0 auto;
     }
+
+    /* blog page */
+    .main-blog-page {
+        display: grid;
+        grid-template-columns: repeat(6, 14.6%);
+        grid-gap: 20px;
+        grid-template-areas:
+            "h2-featured h2-featured h2-featured h2-featured h2-featured h2-featured"
+            "featured featured featured featured categories categories"
+            "featured featured featured featured categories categories"
+            "line line line line line line"
+            "h2-latest h2-latest h2-latest h2-latest h2-latest h2-latest"
+            "post post post post post post"
+            "post post post post post post"
+            "post post post post post post"
+            "post post post post post post"
+            "post post post post post post";
+    }
+
+    .featured-post-container {
+        grid-area: featured;
+    }
+    .blog-page-h2 {
+        grid-area: h2-featured;
+    }
+    .categories-container {
+        grid-area: categories;
+    }
+    .latest-posts-blog {
+        grid-area: h2-latest;
+    }
+    .blog-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        grid-area: post;
+    }
 }
 
 /*////////// desktop //////////*/
@@ -637,5 +700,18 @@ footer {
     .excerpt {
         max-height: 250px;
         overflow: hidden;
+    }
+
+    /* blog page */
+    .categories-container {
+        padding: 50px 55px;
+    }
+
+    .categories-container a {
+        line-height: 35px;
+    }
+
+    .blog-container {
+        grid-gap: 30px;
     }
 }

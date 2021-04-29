@@ -30,37 +30,48 @@
     <div class="body">
 
         <main>
-            <!-- <h1 class="centered">Blog</h1>
-            <h2 class="margin-h2 full-width latest-posts">Featured Post</h2>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <img class="carousel-image" src="images/test.jpg">
-                    <div class="overlay">
-                        <h3 class="carousel-text">Guide to Cartagena</h3>
-                        <p>Lorem Ipsum dolor sit amet</p>
-                    </div>
+            <h1 class="centered">Blog</h1>
+            <div class="main-blog-page">
+
+                <h2 class="margin-h2 full-width latest-posts blog-page-h2">Featured Post</h2>
+                <div class="featured-post-container"></div>
+
+                <div class="categories-container">
+                    <h3>CATEGORIES</h3>
+                    <p><a href="lifestyle.html">Lifestyle</a></p>
+                    <p><a href="destinations.html">Travel Destinations</a></p>
+                    <p><a href="travel-tips.html">Travel Tips</a></p>
+                    <p><a href="retreats.html">Retreats</a></p>
+                    <p><a href="digital-nomad.html">Digital Nomad Resources</a></p>
+                    <p><a href="solo-female-travel.html">Solo Female Travel</a></p>
+                    <p><a href="budget-travel.html">Budget Travel</a></p>
+                    <p><a href="earning-money.html">Earning Money</a></p>
                 </div>
-            </div> -->
 
-            <div class="thin line thin-line-one"></div>
-            <h2 class="margin-h2 full-width latest-posts-blog">Latest Posts</h2>
-
-            <div class="blog-container">
-                <!-- <div class="blog-page-box one">
-                    <img src="images/test.jpg"  class="box-image box-image-one">
-                    <div class="box-text box-text-one">
-                        <h3 class="carousel-text post-h3">How to climb Haiku Stairs, aka Stairway to Heaven </h3>
-                        <p class="date">April 21 - Travel - USA</p>
-                        <p class="excerpt">Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                            magna aliquyam erat, sed diam voluptua. At vero
-                        </p>
-                    </div>
-                </div> -->
+                <div class="thin line line-blog-page"></div>
+                <h2 class="margin-h2 full-width latest-posts-blog">Latest Posts</h2>
+                <div class="blog-container"></div>
             </div>
-
         </main>
-
+    <p class="centered load-more">More posts</p>
+    </div>
+    <div class="sign-up-newsletter">
+        <h3 class="carousel-text centered sign-up-h3">Get travel travel tips, nomad resources and more straight to your inbox!</h3>
+        <h4 class="centered padding sign-up-h4">For exclusive travel tips, giveaways and more, be sure to subscribe to my newsletter. </h4>
+        <form id="newsletter" method="GET" action="">
+            <div id="message"></div>
+            <div class="input-container">
+                <input name="name" id="name" class="input" type="text" required/>
+                <label for="name" class="label">Name</label>
+                <div class="form-error" id="nameError">Please enter your name</div>
+            </div>
+            <div class="input-container">
+                <input name="email" id="email" class="input" type="email" required/>
+                <label for="email" class="label">E-mail</label>
+                <div class="form-error" id="emailError">Please enter a valid email address</div>
+            </div>
+            <button class="btn newsletter-btn">Sign me up!</button>
+        </form>
     </div>
     <div class="line margin-bottom"></div>
     <footer>
