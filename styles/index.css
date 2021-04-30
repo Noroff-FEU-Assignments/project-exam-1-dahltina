@@ -400,6 +400,69 @@ footer {
     margin-bottom: 20px;
 }
 
+/* contact page */
+
+.form-container {
+    text-align: center;
+}
+
+.contact-form {
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+.form-container h3 {
+    text-transform: inherit;
+    padding: 40px;
+}
+
+.contact-form input {
+    height: 45px;
+    border: 1px solid var(--gray);
+}
+
+.contact-form textarea,
+.contact-form input {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.contact-form label {
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.contact-form textarea {
+    margin-bottom: 0px;
+}
+
+.contact-form input[type="submit"] {
+    border: none;
+    margin: 0px 0px 100px 0px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--cta);
+    border: none;
+}
+
+/* messages contact form */
+
+.formError {
+    display: none;
+    color: rgb(160, 41, 41);
+    padding: 0px 0px 10px 0px;
+}
+
+.success-message {
+    border: 2px solid var(--cta);
+    padding: 20px;
+    width: 100%;
+}
+
 /*////////// tablets //////////*/
 @media (min-width: 650px) and (max-width: 900px) {
     /* navigation */
@@ -486,6 +549,43 @@ footer {
 
     .favorite-places-h2 {
         margin: 40px 0px;
+    }
+
+    /* contact page */
+
+    .contact-form {
+        max-width: 600px;
+        display: grid;
+        grid-gap: 0px 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name email"
+            "subject subject"
+            "message message"
+            ". submit";
+    }
+
+    .name {
+        grid-area: name;
+    }
+
+    .email {
+        grid-area: email;
+    }
+
+    .subject {
+        grid-area: subject;
+    }
+
+    .contact-form input[type="submit"] {
+        grid-area: submit;
+        width: 60%;
+        justify-self: end;
+        cursor: pointer;
+    }
+
+    .textarea {
+        grid-area: message;
     }
 }
 
@@ -729,6 +829,43 @@ footer {
         padding-bottom: 150px;
         grid-gap: 20px;
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* contact page */
+
+    .contact-form {
+        max-width: 800px;
+        display: grid;
+        grid-gap: 0px 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name email"
+            "subject subject"
+            "message message"
+            ". submit";
+    }
+
+    .name {
+        grid-area: name;
+    }
+
+    .email {
+        grid-area: email;
+    }
+
+    .subject {
+        grid-area: subject;
+    }
+
+    .contact-form input[type="submit"] {
+        grid-area: submit;
+        width: 60%;
+        justify-self: end;
+        cursor: pointer;
+    }
+
+    .textarea {
+        grid-area: message;
     }
 }
 
