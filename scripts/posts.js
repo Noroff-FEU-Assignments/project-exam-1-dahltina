@@ -66,12 +66,14 @@ const featuredContainer = document.querySelector(".featured-post-container")
 function displayFeaturedPost(post) {
     console.log(post);
 
-    featuredContainer.innerHTML += `<img src="${post._embedded['wp:featuredmedia']['0'].source_url}"  class="carousel-image">
-                                    <div class="overlay">
-                                        <h3 class="carousel-text">${post.title.rendered}</h3>
-                                        <p>${post.excerpt.rendered}</p>
+    featuredContainer.innerHTML += `<a href="post.html?id=50">
+                                        <img src="${post._embedded['wp:featuredmedia']['0'].source_url}"  class="carousel-image">
+                                        <div class="overlay">
+                                            <h3 class="carousel-text">${post.title.rendered}</h3>
+                                            <p>${post.excerpt.rendered}</p>
+                                        </div>
                                     </div>
-                                </div>`
+                                </a>`
 }
 
 

@@ -1,16 +1,12 @@
+
+const pageTitle = document.querySelector("title");
 const postContainer = document.querySelector(".blog-container");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-
 const id = params.get("id");
 
 const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/" + id + "?_embed";
-
-const postDetailsUrl = url + "/blocks";
-console.log(postDetailsUrl);
-
-console.log(url);
 
 async function getPost() {
 
@@ -29,7 +25,10 @@ async function getPost() {
                                             ${result.content.rendered}
                                         </div>
                                     </div>`
+
+        pageTitle.innerHTML += `${result.title.rendered}`;
     }
+
     catch (error) {
         console.log(error);
     }
@@ -37,3 +36,7 @@ async function getPost() {
 
 getPost();
 
+
+console.log(url);
+const postDetailsUrl = url + "/blocks";
+console.log(postDetailsUrl);

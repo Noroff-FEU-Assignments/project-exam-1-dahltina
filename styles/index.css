@@ -379,6 +379,10 @@ footer {
     margin: 20px 0px;
 }
 
+.featured-post-container a {
+    color: inherit;
+}
+
 .featured-post-container {
     position: relative;
 }
@@ -447,6 +451,10 @@ input:focus,
 textarea:focus {
     outline: 2px solid var(--cta);
     border: none;
+}
+
+textarea {
+    resize: none;
 }
 
 /* messages contact form */
