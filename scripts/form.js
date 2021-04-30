@@ -16,15 +16,15 @@ form.addEventListener("submit", submitForm);
 
 
 function submitForm(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     if (checkLength(fullName.value, 4) && checkLength(subject.value, 14) && validateEmail(email.value) && checkLength(message.value, 24)) {
-        successMessage.innerHTML = `<div class="success-message">Thank you!
-                                Your message has been sent and I will get back to you shortly</div>`
+
+        successMessage.innerHTML = `<div class="success-message">Your message has been sent</div>`;
         form.reset();
     }
-}
 
+}
 
 function validateForm(event) {
     event.preventDefault();
@@ -49,6 +49,7 @@ function validateForm(event) {
     } else {
         messageError.style.display = "block";
     }
+
 }
 
 

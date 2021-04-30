@@ -461,6 +461,8 @@ textarea:focus {
     border: 2px solid var(--cta);
     padding: 20px;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /*////////// tablets //////////*/
@@ -555,37 +557,12 @@ textarea:focus {
 
     .contact-form {
         max-width: 600px;
-        display: grid;
-        grid-gap: 0px 20px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "name email"
-            "subject subject"
-            "message message"
-            ". submit";
-    }
-
-    .name {
-        grid-area: name;
-    }
-
-    .email {
-        grid-area: email;
-    }
-
-    .subject {
-        grid-area: subject;
     }
 
     .contact-form input[type="submit"] {
-        grid-area: submit;
         width: 60%;
         justify-self: end;
         cursor: pointer;
-    }
-
-    .textarea {
-        grid-area: message;
     }
 }
 
@@ -835,37 +812,10 @@ textarea:focus {
 
     .contact-form {
         max-width: 800px;
-        display: grid;
-        grid-gap: 0px 20px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "name email"
-            "subject subject"
-            "message message"
-            ". submit";
-    }
-
-    .name {
-        grid-area: name;
-    }
-
-    .email {
-        grid-area: email;
-    }
-
-    .subject {
-        grid-area: subject;
     }
 
     .contact-form input[type="submit"] {
-        grid-area: submit;
-        width: 60%;
-        justify-self: end;
         cursor: pointer;
-    }
-
-    .textarea {
-        grid-area: message;
     }
 }
 
