@@ -37,6 +37,39 @@ async function getPost() {
 getPost();
 
 
-console.log(url);
-const postDetailsUrl = url + "/blocks";
-console.log(postDetailsUrl);
+// console.log(url);
+// const postDetailsUrl = url + "/blocks";
+// console.log(postDetailsUrl);
+
+
+// image modal enlarge on click
+
+const modalImg = document.getElementsByClassName("wp-block-image");
+const modal = document.querySelector(".modal");
+const modalImage = document.querySelectorAll("modal-content");
+const image = document.querySelectorAll("figure");
+
+
+image.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.scr;
+    console.log("image click");
+}
+
+postContainer.addEventListener('click', function (e) {
+    if (e.target && e.target.class == 'wp-block-image') {
+        console.log("click");
+    }
+});
+
+// Get the element, add a click listener...
+postContainer.addEventListener("click", function (e) {
+    // e.target is the clicked element!
+    // If it was a list item
+    if (e.target && e.target.nodeName == "IMG") {
+        // List item found!  Output the ID!
+        console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+        modal.style.display = "block";
+        modalImg.src = this.scr;
+    }
+});
