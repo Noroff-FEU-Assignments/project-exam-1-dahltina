@@ -77,10 +77,6 @@ h3 {
 
 a {
     text-decoration: none;
-}
-
-.blog-container a,
-.carousel-container a {
     color: inherit;
 }
 
@@ -275,7 +271,9 @@ ul a {
 
 .about-section,
 .box-1,
-.blog-post-box {
+.blog-post-box-one,
+.blog-post-box-two,
+.blog-post-box-three {
     margin: 30px 0px;
 }
 
@@ -377,10 +375,6 @@ footer {
 /* blog page */
 .blog-page-box {
     margin: 20px 0px;
-}
-
-.featured-post-container a {
-    color: inherit;
 }
 
 .featured-post-container {
@@ -503,7 +497,9 @@ textarea {
     .carousel-container,
     .line,
     .sign-up-newsletter,
-    .blog-post-box,
+    .blog-post-box-one,
+    .blog-post-box-two,
+    .blog-post-box-three,
     .about-section {
         grid-column: 1 / 3;
     }
@@ -522,6 +518,14 @@ textarea {
         grid-gap: 20px;
     }
 
+    .box-image {
+        grid-column: 1 / 2;
+    }
+
+    .box-text {
+        grid-column: 2 / 3;
+    }
+
     .box-1 {
         margin: 0px;
     }
@@ -530,7 +534,7 @@ textarea {
         grid-column: 1 / 3;
     }
 
-    .one {
+    .blog-post-box-one {
         margin-top: 0px;
     }
 
@@ -649,25 +653,25 @@ textarea {
     .line-one {
         grid-area: 5 / 1 / 6 / 7;
     }
-    .h2-popular-posts  {
+    .h2-popular-posts {
         grid-area: 6 / 3 / 7 / 7;
     }
     .about-section {
         grid-area: 7 / 1 / 13 / 3;
     }
-    .one {
+    .blog-post-box-one {
         grid-area: 7 / 3 / 8 / 7;
     }
     .thin-line-one {
         grid-area: 8 / 3 / 9 / 7;
     }
-    .two {
+    .blog-post-box-two {
         grid-area: 9 / 3 / 10 / 7;
     }
     .thin-line-two {
         grid-area: 10 / 3 / 11 / 7;
     }
-    .three {
+    .blog-post-box-three {
         grid-area: 11 / 3 / 12 / 7;
     }
     .thin-line-three {
@@ -707,7 +711,7 @@ textarea {
         grid-gap: 20px;
     }
 
-    .blog-post-box.one {
+    .blog-post-box-one {
         grid-template-rows: 50px 1fr;
     }
     .box-image-one {
@@ -717,9 +721,15 @@ textarea {
         grid-area: 2 / 2 / 3 / 3;
     }
 
+    .h2-popular-posts {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
     .box-1,
-    .blog-post-box,
-    .carousel-container {
+    .carousel-container,
+    .blog-post-box-one,
+    .blog-post-box-two,
+    .blog-post-box-three {
         margin: 0px;
     }
 

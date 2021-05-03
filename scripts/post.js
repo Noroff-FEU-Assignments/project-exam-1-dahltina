@@ -47,7 +47,7 @@ getPost();
 const modalImg = document.getElementsByClassName("wp-block-image");
 const modal = document.querySelector(".modal");
 const modalImage = document.querySelectorAll("modal-content");
-const image = document.querySelectorAll("figure");
+const image = document.getElementsByTagName("img");
 
 
 image.onclick = function () {
@@ -68,8 +68,14 @@ postContainer.addEventListener("click", function (e) {
     // If it was a list item
     if (e.target && e.target.nodeName == "IMG") {
         // List item found!  Output the ID!
-        console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+        console.log("An image was clicked!");
         modal.style.display = "block";
         modalImg.src = this.scr;
     }
 });
+
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
