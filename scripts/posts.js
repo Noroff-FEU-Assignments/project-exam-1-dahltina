@@ -1,6 +1,7 @@
 
-const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/?_embed";
-const urlTenResults = url + "?per_page=12&offset=15";
+const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/?per_page=10&page=1&_embed";
+const loadMoreBtn = document.querySelector(".load-more");
+// ?per_page=12&offset=15
 
 
 async function getLatestPosts() {
@@ -40,6 +41,30 @@ function displayPosts(post) {
                                     </a>`
     }
 }
+
+// load more posts
+
+let page = 2;
+const url2 = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/?per_page=10&page=" + page + "&_embed";
+
+async function getMorePosts() {
+
+    try {
+        const response = await fetch(url2);
+        const results = await response.json();
+        displayPosts(results);
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+const loadMore = async () => {
+    page++
+    await getMorePosts()
+}
+
+loadMoreBtn.addEventListener("click", loadMore)
 
 
 

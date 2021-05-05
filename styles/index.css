@@ -394,8 +394,15 @@ footer {
 .categories-container h3,
 .categories-container,
 .featured-post-container,
-.blog-page-h2 {
+.blog-page-h2,
+.resources-h2 {
     margin-bottom: 20px;
+}
+
+.load-more {
+    width: 200px;
+    margin: auto;
+    margin-bottom: 150px;
 }
 
 /* contact page */
