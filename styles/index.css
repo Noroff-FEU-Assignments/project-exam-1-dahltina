@@ -403,6 +403,7 @@ footer {
     width: 200px;
     margin: auto;
     margin-bottom: 150px;
+    cursor: pointer;
 }
 
 /* contact page */

@@ -81,7 +81,7 @@ async function getPopularPost1() {
                             <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
-                                <p class="date">${json.date} - Travel - USA</p>
+                                <p class="date">${json.date}</p>
                                 <p class="excerpt">${json.excerpt.rendered}</p>
                             </div>
                         </a>`
@@ -104,7 +104,7 @@ async function getPopularPost2() {
                             <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
-                                <p class="date">${json.date} - Travel - USA</p>
+                                <p class="date">${json.date}</p>
                                 <p class="excerpt">${json.excerpt.rendered}</p>
                             </div>
                         </a>`
@@ -127,7 +127,7 @@ async function getPopularPost3() {
                             <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
-                                <p class="date">${json.date} - Travel - USA</p>
+                                <p class="date">${json.date}</p>
                                 <p class="excerpt">${json.excerpt.rendered}</p>
                             </div>
                         </a>`
@@ -140,20 +140,3 @@ async function getPopularPost3() {
 
 getPopularPost3()
 
-
-
-
-// function displayPopularPosts(post) {
-//     console.log(post);
-
-//     box1.innerHTML += ` <a href="post.html?id=50">
-//                             <h2 class="h2-popular-posts margin-h2 full-width ">Popular Posts</h2>
-//                             <img src="${post._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
-//                             <div class="box-text box-text-one">
-//                                 <h3 class="carousel-text post-h3">${post.title.rendered}</h3>
-//                                 <p class="date">${post.date} - Travel - USA</p>
-//                                 <p class="excerpt">${post.excerpt.rendered}</p>
-//                             </div>
-//                         </a>
-//                     </div>`
-// }

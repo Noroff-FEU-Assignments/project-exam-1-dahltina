@@ -25,8 +25,6 @@ const blogContainer = document.querySelector(".blog-container");
 function displayPosts(post) {
     console.log(post);
 
-    // const date = new Intl.DateTimeFormat(post.date).format(post.date);
-
     for (let i = 0; i < post.length; i++) {
 
         blogContainer.innerHTML += `<a href="post.html?id=${post[i].id}">
@@ -34,7 +32,7 @@ function displayPosts(post) {
                                             <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
                                             <div class="box-text box-text-one">
                                                 <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
-                                                <p class="date">${post[i].date} - Travel - USA</p>
+                                                <p class="date">${post[i].date}</p>
                                                 <p class="excerpt">${post[i].excerpt.rendered}</p>
                                             </div>
                                         </div>
@@ -62,6 +60,7 @@ async function getMorePosts() {
 const loadMore = async () => {
     page++
     await getMorePosts()
+    loadMoreBtn.style.display = "none";
 }
 
 loadMoreBtn.addEventListener("click", loadMore)
@@ -102,49 +101,7 @@ function displayFeaturedPost(post) {
 }
 
 
-// div class="featured-post-container">
-//                 <img class="featured-post-image" src="images/kerala-3.jpg">
-//                 <div class="overlay">
-//                     <h3 class="carousel-text"></h3>
-//                     <p></p>
-//                 </div>
-//             </div>
-
-
-// function displayPosts(post) {
-//     console.log(post);
-//     post.forEach(function (post) {
-
-//         carouselContainer.innerHTML += `<div class="carousel">
-//                                                 <section>
-//                                                     <img class="carousel-image" src="${post._embedded['wp:featuredmedia']['0'].source_url}">
-//                                                     <div class="overlay">
-//                                                         <h3 class="carousel-text">${post.title.rendered}</h3>
-//                                                         <p>${post.excerpt.rendered}</p>
-//                                                     </div>
-//                                                 </section>
-//                                         </div>
-//                                     </div>`
-//     })
-// }
-
-
 // const mediaUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/media?per_page=100";
-
-// async function getMedia() {
-
-//     try {
-//         const response = await fetch(mediaUrl);
-//         const image = await response.json();
-//         createCarousel(image);
-//     }
-//     catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// getMedia()
-
 
 // const json = await (await fetch(url + key)).json();
 // const jsonSorted = json.sort((a, b) => a - b);

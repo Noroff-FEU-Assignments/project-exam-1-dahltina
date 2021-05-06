@@ -17,7 +17,7 @@ async function getPost() {
 
         postContainer.innerHTML += `<div class="intro">
                                         <h1>${result.title.rendered}</h1>
-                                        <p class="date">${result.date} - Travel - USA</p>
+                                        <p class="date">${result.date}</p>
                                         <img src="${result._embedded['wp:featuredmedia']['0'].source_url}" class="featured-image">
                                     </div>
                                     <div class="post-container">
@@ -26,7 +26,8 @@ async function getPost() {
                                         </div>
                                     </div>`
 
-        pageTitle.innerHTML += `${result.title.rendered}`;
+        pageTitle.innerHTML += `${result.title.rendered}`
+
     }
 
     catch (error) {
@@ -34,12 +35,18 @@ async function getPost() {
     }
 }
 
-getPost();
 
+// getPost().then(() => {
+//     addEvents()
+// })
 
 // console.log(url);
 // const postDetailsUrl = url + "/blocks";
 // console.log(postDetailsUrl);
+// ${result._embedded['wp:term']['0'].name}
+
+// let li = document.createElement('li');
+// document.querySelector('ul').appendChild(li);
 
 
 // image modal enlarge on click
@@ -47,35 +54,42 @@ getPost();
 const modalImg = document.getElementsByClassName("wp-block-image");
 const modal = document.querySelector(".modal");
 const modalImage = document.querySelectorAll("modal-content");
-const image = document.getElementsByTagName("img");
+const apiImg = document.getElementById("api-img");
+const images = document.getElementsByTagName("IMG");
+const figure = document.getElementsByTagName("FIGURE");
+const image = document.querySelectorAll("IMG");
 
-
-image.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.scr;
-    console.log("image click");
+function triggerModal() {
+    figure.onclick = function () {
+        console.log("hey bitch");
+    }
 }
 
-postContainer.addEventListener('click', function (e) {
-    if (e.target && e.target.class == 'wp-block-image') {
-        console.log("click");
-    }
-});
+getPost().then(() => {
+    triggerModal()
+})
 
-// Get the element, add a click listener...
-postContainer.addEventListener("click", function (e) {
-    // e.target is the clicked element!
-    // If it was a list item
-    if (e.target && e.target.nodeName == "IMG") {
-        // List item found!  Output the ID!
-        console.log("An image was clicked!");
-        modal.style.display = "block";
-        modalImg.src = this.scr;
-    }
-});
 
-window.onclick = function (event) {
-    if (event.target === modal) {
+
+// postContainer.addEventListener("click", function (e) {
+//     if (e.target && e.target.nodeName == "IMG") {
+//         console.log("An image was clicked!");
+//         // modal.style.display = "block";
+//         apiImg.src = this.scr;
+//         apiImg.style.color = "red";
+//     }
+// });
+
+// image.forEach(image => {
+//     if (!image.classList.contains("class") {
+//       image.addEventListener("click", function)
+//     }
+//   })
+
+
+// close modal
+window.onclick = function (e) {
+    if (e.target === modal) {
         modal.style.display = "none";
     }
 }
