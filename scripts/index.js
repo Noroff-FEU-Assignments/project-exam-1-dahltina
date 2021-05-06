@@ -76,12 +76,18 @@ async function getPopularPost1() {
         const response = await fetch(urlBox1);
         const json = await response.json();
 
+        const newDate = new Date(json.date).toLocaleString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+
         box1.innerHTML += ` <a class="blog-post-box" href="post.html?id=50">
                             <h2 class="h2-popular-posts margin-h2 full-width ">Popular Posts</h2>
                             <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
-                                <p class="date">${json.date}</p>
+                                <p class="date">${newDate}</p>
                                 <p class="excerpt">${json.excerpt.rendered}</p>
                             </div>
                         </a>`
@@ -100,11 +106,17 @@ async function getPopularPost2() {
         const response = await fetch(urlBox2);
         const json = await response.json();
 
+        const newDate = new Date(json.date).toLocaleString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+
         box2.innerHTML += ` <a class="blog-post-box" href="post.html?id=79">
                             <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
-                                <p class="date">${json.date}</p>
+                                <p class="date">${newDate}</p>
                                 <p class="excerpt">${json.excerpt.rendered}</p>
                             </div>
                         </a>`
@@ -123,11 +135,17 @@ async function getPopularPost3() {
         const response = await fetch(urlBox3);
         const json = await response.json();
 
+        const newDate = new Date(json.date).toLocaleString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+
         box3.innerHTML += ` <a class="blog-post-box" href="post.html?id=90">
                             <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
-                                <p class="date">${json.date}</p>
+                                <p class="date">${newDate}</p>
                                 <p class="excerpt">${json.excerpt.rendered}</p>
                             </div>
                         </a>`

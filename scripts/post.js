@@ -15,9 +15,15 @@ async function getPost() {
         const result = await response.json()
         console.log(result);
 
+        const newDate = new Date(result.date).toLocaleString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+
         postContainer.innerHTML += `<div class="intro">
                                         <h1>${result.title.rendered}</h1>
-                                        <p class="date">${result.date}</p>
+                                        <p class="date">${newDate}</p>
                                         <img src="${result._embedded['wp:featuredmedia']['0'].source_url}" class="featured-image">
                                     </div>
                                     <div class="post-container">

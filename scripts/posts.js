@@ -27,12 +27,18 @@ function displayPosts(post) {
 
     for (let i = 0; i < post.length; i++) {
 
+        const newDate = new Date(post[i].date).toLocaleString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+
         blogContainer.innerHTML += `<a href="post.html?id=${post[i].id}">
                                         <div class="blog-page-box">
                                             <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
                                             <div class="box-text box-text-one">
                                                 <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
-                                                <p class="date">${post[i].date}</p>
+                                                <p class="date">${newDate}</p>
                                                 <p class="excerpt">${post[i].excerpt.rendered}</p>
                                             </div>
                                         </div>
