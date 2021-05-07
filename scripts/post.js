@@ -43,77 +43,60 @@ async function getPost() {
 
 getPost()
 
-// image modal on click
 
-const closeBtn = document.querySelector(".closeBtn");
+
 let imageClicked = null;
-
-
+const apiImg = document.querySelector("#api-img");
+const closeBtn = document.querySelector(".closeBtn");
+const modal = document.querySelector(".modal-container");
+const modalContent = document.querySelector(".modal-content");
 
 postContainer.addEventListener("click", function (e) {
-
-    const modal = document.querySelector(".modal-container");
-
     if (e.target && e.target.nodeName == "IMG") {
         console.log("An image was clicked!");
+        modal.style.display = "flex";
+        closeBtn.style.display = "flex";
+        apiImg.src = e.target.currentSrc;
+        imageClicked = e.target;
 
-        modal.innerHTML += `<div class="modal">
-                                        <div class="modal-content>
-                                            <span class="closeBtn">&times;</span>
-                                            <img class="modal-content" id="api-img" src="${e.target.currentSrc}">
-                                        </div>
-                                    </div>`
-
-        closeBtn.style.display = "block";
     }
 
-    closeBtn.onclick = function (e) {
+    modal.onclick = function (e) {
         modal.style.display = "none";
         closeBtn.style.display = "none"
     }
+
 });
 
+// image modal on click
 
+// const closeBtn = document.querySelector(".closeBtn");
+// let imageClicked = null;
 
+// postContainer.addEventListener("click", function (e) {
 
-// const modalContainer = document.querySelector("-modal-container");
-// const body = document.querySelector("body");
+//     const modal = document.querySelector(".modal-container");
 
-// postContainer.forEach((zoom) => {
-//     postContainer.addEventListener("click", function (e) {
+//     if (e.target && e.target.nodeName == "IMG") {
+//         console.log("An image was clicked!");
 
-//         if (e.target && e.target.nodeName == "IMG") {
+//         imageClicked = e.target;
 
-//             console.log("image click");
-//             body.style.overflow = "hidden";
-//             modalContainer.style.display = "flex";
-//             modalContainer.innerHTML = `<div class="modal" id="modal">
-//                                             <div class="modal-content>
-//                                                 <span class="closeBtn">&times;</span>
-//                                                 <img class="modal-content" id="api-img" src="${e.target.currentSrc}">
-//                                             </div>
-//                                         </div>`;
-//         }
+//         modal.innerHTML += `<div class="modal">
+//                                         <div class="modal-content>
+//                                             <span class="closeBtn">&times;</span>
+//                                             <img class="modal-content" id="api-img" src="${e.target.currentSrc}">
+//                                         </div>
+//                                     </div>`
 
-//         const close = document.querySelector(".closeBtn");
-//         close.addEventListener("click", () => {
-//             body.style.overflow = "unset";
-//             modalContainer.style.display = "none";
-//             modalContainer.innerHTML = "";
+//         closeBtn.style.display = "block";
+//     }
 
+//     closeBtn.onclick = function (e) {
+//         modal.style.display = "none";
+//         closeBtn.style.display = "none"
+//     }
 
-//         });
-//     });
 // });
-
-
-// figure.forEach((zoom) => {
-//     zoom.addEventListener("click", (e) => {
-//         body.style.overflow = "hidden";
-//         modal.innerHTML = `<div class="modal">
-//                                 <img class="modal-img" src="${e.target.currentSrc}">
-//                             </div>`
-//     })
-// })
 
 

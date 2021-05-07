@@ -14,7 +14,8 @@ img {
 
 /* image modal */
 
-.modal {
+.modal-container {
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -26,15 +27,14 @@ img {
 }
 
 .modal-content {
-    display: flex;
-    box-shadow: 0 5px 20px #b9b9b9;
+    margin: auto;
     pointer-events: none;
 }
 
 #api-img {
     margin: auto;
-    width: 90%;
     max-width: 1200px;
+    box-shadow: 0 5px 20px #b9b9b9;
 }
 
 .closeBtn {
@@ -46,8 +46,6 @@ img {
     z-index: 100;
     font-size: 3rem;
 }
-
-/* figure.wp-block-image  */
 
 /* typography */
 
