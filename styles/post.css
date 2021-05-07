@@ -15,22 +15,36 @@ img {
 /* image modal */
 
 .modal {
-    display: none;
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 11;
     width: 100%;
     height: 100%;
+    overflow: auto;
     background-color: var(--background);
-    opacity: 0.9;
+    z-index: 12;
 }
 
 .modal-content {
+    display: flex;
+    box-shadow: 0 5px 20px #b9b9b9;
+    pointer-events: none;
+}
+
+#api-img {
     margin: auto;
-    display: block;
     width: 90%;
     max-width: 1200px;
+}
+
+.closeBtn {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    font-size: 3rem;
 }
 
 /* figure.wp-block-image  */

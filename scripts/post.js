@@ -41,61 +41,79 @@ async function getPost() {
     }
 }
 
+getPost()
 
-// getPost().then(() => {
-//     addEvents()
-// })
+// image modal on click
 
-// console.log(url);
-// const postDetailsUrl = url + "/blocks";
-// console.log(postDetailsUrl);
-// ${result._embedded['wp:term']['0'].name}
-
-// let li = document.createElement('li');
-// document.querySelector('ul').appendChild(li);
+const closeBtn = document.querySelector(".closeBtn");
+let imageClicked = null;
 
 
-// image modal enlarge on click
 
-const modalImg = document.getElementsByClassName("wp-block-image");
-const modal = document.querySelector(".modal");
-const modalImage = document.querySelectorAll("modal-content");
-const apiImg = document.getElementById("api-img");
-const images = document.getElementsByTagName("IMG");
-const figure = document.getElementsByTagName("FIGURE");
-const image = document.querySelectorAll("IMG");
+postContainer.addEventListener("click", function (e) {
 
-function triggerModal() {
-    figure.onclick = function () {
-        console.log("hey bitch");
+    const modal = document.querySelector(".modal-container");
+
+    if (e.target && e.target.nodeName == "IMG") {
+        console.log("An image was clicked!");
+
+        modal.innerHTML += `<div class="modal">
+                                        <div class="modal-content>
+                                            <span class="closeBtn">&times;</span>
+                                            <img class="modal-content" id="api-img" src="${e.target.currentSrc}">
+                                        </div>
+                                    </div>`
+
+        closeBtn.style.display = "block";
     }
-}
 
-getPost().then(() => {
-    triggerModal()
-})
+    closeBtn.onclick = function (e) {
+        modal.style.display = "none";
+        closeBtn.style.display = "none"
+    }
+});
 
 
 
-// postContainer.addEventListener("click", function (e) {
-//     if (e.target && e.target.nodeName == "IMG") {
-//         console.log("An image was clicked!");
-//         // modal.style.display = "block";
-//         apiImg.src = this.scr;
-//         apiImg.style.color = "red";
-//     }
+
+// const modalContainer = document.querySelector("-modal-container");
+// const body = document.querySelector("body");
+
+// postContainer.forEach((zoom) => {
+//     postContainer.addEventListener("click", function (e) {
+
+//         if (e.target && e.target.nodeName == "IMG") {
+
+//             console.log("image click");
+//             body.style.overflow = "hidden";
+//             modalContainer.style.display = "flex";
+//             modalContainer.innerHTML = `<div class="modal" id="modal">
+//                                             <div class="modal-content>
+//                                                 <span class="closeBtn">&times;</span>
+//                                                 <img class="modal-content" id="api-img" src="${e.target.currentSrc}">
+//                                             </div>
+//                                         </div>`;
+//         }
+
+//         const close = document.querySelector(".closeBtn");
+//         close.addEventListener("click", () => {
+//             body.style.overflow = "unset";
+//             modalContainer.style.display = "none";
+//             modalContainer.innerHTML = "";
+
+
+//         });
+//     });
 // });
 
-// image.forEach(image => {
-//     if (!image.classList.contains("class") {
-//       image.addEventListener("click", function)
-//     }
-//   })
+
+// figure.forEach((zoom) => {
+//     zoom.addEventListener("click", (e) => {
+//         body.style.overflow = "hidden";
+//         modal.innerHTML = `<div class="modal">
+//                                 <img class="modal-img" src="${e.target.currentSrc}">
+//                             </div>`
+//     })
+// })
 
 
-// close modal
-window.onclick = function (e) {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-}
