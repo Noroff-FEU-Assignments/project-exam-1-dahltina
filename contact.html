@@ -11,6 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Contact | Nomadlife</title>
+    <!-- Hotjar Tracking Code for https://nomadlifetinadahl.netlify.app -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2391267,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </head>
 <body>
     <header>
@@ -70,16 +81,16 @@
         <h3 class="carousel-text centered sign-up-h3">Get travel travel tips, nomad resources and more straight to your inbox!</h3>
         <h4 class="centered padding sign-up-h4">For exclusive travel tips, giveaways and more, be sure to subscribe to my newsletter. </h4>
         <form id="newsletter" method="GET" action="">
-            <div id="message"></div>
+            <div id="s-message"></div>
             <div class="input-container">
-                <input name="name" id="name" class="input" type="text" required/>
-                <label for="name" class="label">Name</label>
-                <div class="form-error" id="nameError">Please enter your name</div>
+                <input name="s-name" id="s-name" class="input" type="text"/>
+                <label for="s-name" class="label">Name</label>
+                <div class="form-error" id="s-nameError">Please enter your name</div>
             </div>
             <div class="input-container">
-                <input name="email" id="email" class="input" type="email" required/>
-                <label for="email" class="label">E-mail</label>
-                <div class="form-error" id="emailError">Please enter a valid email address</div>
+                <input name="s-email" id="s-email" class="input" type="email"/>
+                <label for="s-email" class="label">E-mail</label>
+                <div class="form-error" id="s-emailError">Please enter a valid email address</div>
             </div>
             <button class="btn newsletter-btn">Sign me up!</button>
         </form>

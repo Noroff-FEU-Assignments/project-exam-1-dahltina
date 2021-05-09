@@ -111,3 +111,5 @@ function displayFeaturedPost(post) {
 
 // const json = await (await fetch(url + key)).json();
 // const jsonSorted = json.sort((a, b) => a - b);
+
+// const lifestyleUrl =

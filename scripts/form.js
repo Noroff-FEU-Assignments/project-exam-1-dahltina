@@ -1,4 +1,4 @@
-
+// contact form
 
 const form = document.querySelector("#form");
 const successMessage = document.querySelector("#success-message");
@@ -23,7 +23,6 @@ function submitForm(event) {
         successMessage.innerHTML = `<div class="success-message">Your message has been sent</div>`;
         form.reset();
     }
-
 }
 
 function validateForm(event) {
@@ -66,3 +65,40 @@ function validateEmail(email) {
     const patternMatches = regEx.test(email);
     return patternMatches;
 }
+
+// sign up newsletter form
+
+// const newsletterForm = document.querySelector("#newsletter");
+// const signupMessage = document.querySelector("#s-message");
+// const signupName = document.querySelector("#s-name");
+// const signupNameError = document.querySelector("#s-nameError");
+// const signupEmail = document.querySelector("#s-email");
+// const signupEmailError = document.querySelector("#s-emailError");
+
+// newsletterForm.addEventListener("submit", validateForm);
+// newsletterForm.addEventListener("submit", submitForm);
+
+// function signupForm(event) {
+//     event.preventDefault();
+
+//     if (checkLength(fullName.value, 4) && validateEmail(email.value)) {
+
+//         signupMessage.innerHTML = `<div class="success-message">You're subscribed! Please check your e-mail to confirm</div>`;
+//         form.reset();
+//     }
+// }
+
+// function validateSubscribeForm(event) {
+//     event.preventDefault();
+
+//     if (checkLength(fullName.value, 4)) {
+//         signupName.style.display = "none";
+//     } else {
+//         signupNameError.style.display = "block";
+//     }
+//     if (validateEmail(email.value)) {
+//         signupEmail.style.display = "none";
+//     } else {
+//         signupEmail.style.display = "block";
+//     }
+// }

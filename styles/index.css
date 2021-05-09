@@ -26,6 +26,7 @@
 body {
     background-color: var(--background);
     font-family: "Montserrat";
+    max-width: 1920px;
 }
 
 .body {
@@ -478,6 +479,7 @@ textarea {
 /*////////// tablets //////////*/
 @media (min-width: 650px) and (max-width: 900px) {
     /* navigation */
+
     ul {
         font-size: 1.2rem;
     }
@@ -589,6 +591,7 @@ textarea {
 /*////////// laptops //////////*/
 @media (min-width: 901px) {
     /* navigation */
+
     ul {
         font-size: 1.5rem;
     }
