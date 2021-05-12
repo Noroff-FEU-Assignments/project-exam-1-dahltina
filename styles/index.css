@@ -458,6 +458,15 @@ textarea:focus {
 
 textarea {
     resize: none;
+    font-family: inherit;
+    padding: 10px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"] {
+    font-family: inherit;
+    padding-left: 10px;
 }
 
 /* messages contact form */
@@ -472,7 +481,7 @@ textarea {
     border: 2px solid var(--cta);
     padding: 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
