@@ -48,5 +48,6 @@ function displayPosts(post) {
                                             </div>
                                         </div>
                                     </a>`
+
     }
 }
