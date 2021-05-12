@@ -1,6 +1,5 @@
 
-const pageTitle = document.querySelector("title");
-const pageHeader = document.querySelector(".h1-category")
+
 const postContainer = document.querySelector(".blog-container");
 
 const queryString = document.location.search;
@@ -51,3 +50,28 @@ function displayPosts(post) {
 
     }
 }
+
+// display category name in title and h1
+const pageTitle = document.querySelector("title");
+const pageHeader = document.querySelector(".h1-categories");
+const categoriesUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/categories/" + id + "?per_page=100";
+
+async function displayCategory() {
+
+    try {
+        const response = await fetch(categoriesUrl);
+        const categories = await response.json();
+        console.log(categories);
+
+        for (let i = 0; i < categories.length; i++) {
+
+            pageHeader.innerHTML += `${categories[i].name}`;
+            pageTitle.innerHTML += `${categories[i].name}`;
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+displayCategory()

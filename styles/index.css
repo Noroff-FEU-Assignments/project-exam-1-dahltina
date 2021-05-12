@@ -493,6 +493,27 @@ input[type="email"] {
     margin: 0 auto;
 }
 
+/* transitions and animations */
+
+.blog-page-box {
+    overflow: hidden;
+}
+
+.img-wrapper {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.blog-page-box img {
+    height: auto;
+    transform: scale(1);
+    transition: linear all 10s;
+}
+
+.blog-page-box:hover img {
+    transform: scale(1.5);
+}
+
 /*////////// tablets //////////*/
 @media (min-width: 650px) and (max-width: 900px) {
     /* navigation */

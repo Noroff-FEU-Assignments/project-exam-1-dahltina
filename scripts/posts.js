@@ -33,7 +33,9 @@ function displayPosts(post) {
 
         blogContainer.innerHTML += `<a href="post.html?id=${post[i].id}">
                                         <div class="blog-page-box">
-                                            <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
+                                            <div class="img-wrapper">
+                                                <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
+                                            </div>
                                             <div class="box-text box-text-one">
                                                 <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
                                                 <p class="date">${newDate}</p>
