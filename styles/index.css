@@ -270,6 +270,10 @@ ul a {
     align-self: center;
 }
 
+.popular-categories {
+    margin-bottom: 20px;
+}
+
 .about-section,
 .box-1,
 .blog-post-box-one,
@@ -660,6 +664,7 @@ input[type="email"] {
     }
     .popular-categories {
         grid-area: 2 / 5 / 3 / 7;
+        margin-bottom: 0px;
     }
     .outer-container {
         grid-area: 3 / 1 / 5 / 5;

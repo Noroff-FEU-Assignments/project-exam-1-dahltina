@@ -1,8 +1,6 @@
 
 const url = "https://nomadlife.tinadahl.no/wp-json/wp/v2/posts/?per_page=10&page=1&_embed";
 const loadMoreBtn = document.querySelector(".load-more");
-// ?per_page=12&offset=15
-
 
 async function getLatestPosts() {
 
@@ -105,6 +103,34 @@ function displayFeaturedPost(post) {
                                     </div>
                                 </a>`
 }
+
+
+// get categories
+const categoriesUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/categories/?per_page=100";
+const categoriesContainer = document.querySelector(".categories-container");
+
+async function displayCategories() {
+
+    try {
+        const response = await fetch(categoriesUrl);
+        const categories = await response.json();
+        console.log(categories);
+
+        for (let i = 0; i < categories.length; i++) {
+
+            if (categories[i].parent) {
+                continue;
+            }
+
+            categoriesContainer.innerHTML += `<p><a href="category.html?id=${categories[i].id}">${categories[i].name}</a></p>`
+        }
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+displayCategories()
 
 
 // const mediaUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/media?per_page=100";
