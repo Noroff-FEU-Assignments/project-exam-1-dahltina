@@ -54,26 +54,27 @@ function displayPosts(post) {
 }
 
 // display category name in title and h1
-const pageTitle = document.querySelector("title");
-const pageHeader = document.querySelector(".h1-categories");
-const categoriesUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/categories/" + id + "?per_page=100";
 
-async function displayCategory() {
+// const pageTitle = document.querySelector("title");
+// const pageHeader = document.querySelector(".h1-categories");
+// const categoriesUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/categories/" + id + "?per_page=100";
 
-    try {
-        const response = await fetch(categoriesUrl);
-        const categories = await response.json();
-        console.log(categories);
+// async function displayCategory() {
 
-        for (let i = 0; i < categories.length; i++) {
+//     try {
+//         const response = await fetch(categoriesUrl);
+//         const categories = await response.json();
+//         console.log(categories);
 
-            pageHeader.innerHTML += `${categories[i].name}`;
-            pageTitle.innerHTML += `${categories[i].name}`;
-        }
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
+//         for (let i = 0; i < categories.length; i++) {
 
-displayCategory()
+//             pageHeader.innerHTML += `${categories[i].name}`;
+//             pageTitle.innerHTML += `${categories[i].name}`;
+//         }
+//     }
+//     catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// displayCategory()
