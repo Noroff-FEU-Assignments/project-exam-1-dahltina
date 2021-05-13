@@ -481,6 +481,11 @@ input[type="email"] {
     padding-left: 10px;
 }
 
+/* categories page */
+.breadcrumbs {
+margin: 20px 0px;
+}
+
 /* messages contact form */
 
 .formError {

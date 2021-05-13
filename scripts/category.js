@@ -57,6 +57,7 @@ function displayPosts(post) {
 
 const pageTitle = document.querySelector("title");
 const pageHeader = document.querySelector(".h1-categories");
+const breadcrumbs = document.querySelector(".breadcrumbs");
 const categoriesUrl = "https://nomadlife.tinadahl.no/wp-json/wp/v2/categories/" + id + "?per_page=100";
 
 async function displayCategory() {
@@ -67,6 +68,7 @@ async function displayCategory() {
         console.log(categories);
             pageHeader.innerHTML += `${categories.name}`;
             pageTitle.innerHTML = `${categories.name} | Categories | Nomadlife`;
+            breadcrumbs.innerHTML = `<a href="blog.html">Blog</a> > <strong>${categories.name}</strong>`
     }
     catch (error) {
         console.log(error);
