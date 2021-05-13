@@ -338,6 +338,10 @@ ul a {
     background-color: var(--coral);
 }
 
+.sign-up-newsletter.category-page {
+    margin-top: 200px;
+}
+
 /* footer */
 footer {
     margin: 0 auto;
