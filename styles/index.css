@@ -253,9 +253,9 @@ ul a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 140px;
-    background-color: var(--background);
-    opacity: 0.7;
+    height: auto;
+    max-height: 140px;
+    background-color: rgba(248, 246, 240, 0.7);
     position: absolute;
     bottom: 0px;
     text-align: center;
@@ -263,9 +263,13 @@ ul a {
     width: 100%;
 }
 
+.overlay {
+    max-height: 160px;
+}
+
 .overlay-2 {
     height: 55px;
-    bottom: 4px;
+    bottom: 0px;
     display: flex;
     justify-content: center;
 }
@@ -381,9 +385,11 @@ footer {
     padding: 10px;
 }
 
+
 .about-sign-up-section {
     background-color: var(--background);
 }
+
 
 /* blog page */
 .blog-page-box {
@@ -483,7 +489,7 @@ input[type="email"] {
 
 /* categories page */
 .breadcrumbs {
-margin: 20px 0px;
+    margin: 20px 0px;
 }
 
 /* messages contact form */
@@ -513,13 +519,15 @@ margin: 20px 0px;
     overflow: hidden;
 }
 
-.blog-page-box img {
+.blog-page-box img,
+.box-1 img {
     height: auto;
     transform: scale(1);
     transition: linear all 10s;
 }
 
-.blog-page-box:hover img {
+.blog-page-box:hover img,
+.box-1:hover img {
     transform: scale(1.5);
 }
 
@@ -585,6 +593,10 @@ margin: 20px 0px;
 
     .box-1 {
         margin: 0px;
+    }
+
+    .overlay {
+        height: 100px;
     }
 
     .full-width {
