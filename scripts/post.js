@@ -24,7 +24,7 @@ async function getPost() {
         postContainer.innerHTML += `<div class="intro">
                                         <h1>${result.title.rendered}</h1>
                                         <p class="date">${newDate}</p>
-                                        <img src="${result._embedded['wp:featuredmedia']['0'].source_url}" class="featured-image">
+                                        <img src="${result._embedded['wp:featuredmedia']['0'].source_url}" class="featured-image" alt="${result._embedded['wp:featuredmedia']['0'].alt_text}">
                                     </div>
                                     <div class="post-container">
                                         <div class="post-content">
@@ -68,35 +68,6 @@ postContainer.addEventListener("click", function (e) {
 
 });
 
-// image modal on click
 
-// const closeBtn = document.querySelector(".closeBtn");
-// let imageClicked = null;
-
-// postContainer.addEventListener("click", function (e) {
-
-//     const modal = document.querySelector(".modal-container");
-
-//     if (e.target && e.target.nodeName == "IMG") {
-//         console.log("An image was clicked!");
-
-//         imageClicked = e.target;
-
-//         modal.innerHTML += `<div class="modal">
-//                                         <div class="modal-content>
-//                                             <span class="closeBtn">&times;</span>
-//                                             <img class="modal-content" id="api-img" src="${e.target.currentSrc}">
-//                                         </div>
-//                                     </div>`
-
-//         closeBtn.style.display = "block";
-//     }
-
-//     closeBtn.onclick = function (e) {
-//         modal.style.display = "none";
-//         closeBtn.style.display = "none"
-//     }
-
-// });
 
 

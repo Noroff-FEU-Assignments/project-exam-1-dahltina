@@ -30,7 +30,7 @@ function displayCarousel(post) {
 
         carouselContainer.innerHTML += `<a href="post.html?id=${post[i].id}" class="carousel">
                                             <section>
-                                                <img class="carousel-image" src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}">
+                                                <img class="carousel-image" src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${post[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                                                 <div class="overlay">
                                                     <h3 class="carousel-text">${post[i].title.rendered}</h3>
                                                     <p class="carousel-text">${post[i].excerpt.rendered}</p>
@@ -84,7 +84,7 @@ async function getPopularPost1() {
 
         box1.innerHTML += ` <a class="blog-post-box" href="post.html?id=50">
                             <h2 class="h2-popular-posts margin-h2 full-width ">Popular Posts</h2>
-                            <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one">
+                            <img src="${json._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one" alt="${json._embedded['wp:featuredmedia']['0'].source_url}">
                             <div class="box-text box-text-one">
                                 <h3 class="carousel-text post-h3">${json.title.rendered}</h3>
                                 <p class="date">${newDate}</p>

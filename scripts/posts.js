@@ -34,7 +34,7 @@ function displayPosts(post) {
         blogContainer.innerHTML += `<a href="post.html?id=${post[i].id}">
                                         <div class="blog-page-box">
                                             <div class="img-wrapper">
-                                                <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}"  class="box-image box-image-one">
+                                                <img src="${post[i]._embedded['wp:featuredmedia']['0'].source_url}" class="box-image box-image-one" alt="${post[i]._embedded['wp:featuredmedia']['0'].alt_text}">
                                             </div>
                                             <div class="box-text box-text-one">
                                                 <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
@@ -97,7 +97,7 @@ function displayFeaturedPost(post) {
     console.log(post);
 
     featuredContainer.innerHTML += `<a href="post.html?id=50">
-                                        <img src="${post._embedded['wp:featuredmedia']['0'].source_url}"  class="carousel-image">
+                                        <img src="${post._embedded['wp:featuredmedia']['0'].source_url}" class="carousel-image" alt="${post._embedded['wp:featuredmedia']['0'].alt_text}">
                                         <div class="overlay">
                                             <h3 class="carousel-text">${post.title.rendered}</h3>
                                             <p>${post.excerpt.rendered}</p>
