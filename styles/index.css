@@ -105,6 +105,11 @@ img {
     top: 30px;
 }
 
+.btn:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease-in;
+}
+
 .newsletter-btn {
     border: none;
     top: 10px;
@@ -167,7 +172,12 @@ ul {
 }
 
 li {
-    padding-top: 80px;
+    margin-top: 80px;
+}
+
+li:hover {
+    letter-spacing: 5px;
+    transition: all 0.2s ease-in-out;
 }
 
 ul a {
