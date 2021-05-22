@@ -40,6 +40,7 @@ function displayPosts(post) {
                                                 <h3 class="carousel-text post-h3">${post[i].title.rendered}</h3>
                                                 <p class="date">${newDate}</p>
                                                 <p class="excerpt">${post[i].excerpt.rendered}</p>
+                                                <div class="thin line blog-page-line"></div>
                                             </div>
                                         </div>
                                     </a>`
